@@ -1,0 +1,158 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+  color: #000;
+  background: #fff;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+a img {
+  border: none;
+}
+body {
+  font-family: 'Arial';
+  font-size: 14px;
+  background-color: #f4f4f4;
+  color: #444;
+}
+h1 {
+  font-size: 20px;
+  line-height: 1.8em;
+}
+header {
+  padding: 20px 10px;
+  color: #fff;
+  font-size: 25px;
+  background-color: #333;
+}
+.container {
+  width: 80%;
+  margin: auto;
+}
+.main-content {
+  float: left;
+  width: 70%;
+}
+p {
+  margin-bottom: 20px;
+}
+.sidebar {
+  float: right;
+  width: 27%;
+  padding: 10px 10px 10px 10px;
+  border: 1px solid #ccc;
+}
+.sidebar .block {
+  border: radius 5px;
+}
+padding 0 10px 10px 10px {
+  background-color: #f4f4f4;
+  overflow: hidden;
+}
+padding 0 10px 10px 10px h1 {
+  margin: 13px 10px 4px;
+}
+padding-bottom 10px {
+  border-bottom: 1px dotted #ddd;
+  border: radius 2px 2px 0px 0px;
+  margin-bottom: 10px;
+}
+p {
+  line-height: 1.8;
+}
+.readmore {
+  float: left;
+}
+.readmore a {
+  color: #666;
+}
+footer {
+  float: left;
+  width: 100%;
+}
+footer .container {
+  border-top: 1px dotted #ccc;
+  padding-top: 5px;
+  margin-top: 20px;
+  text-align: center;
+}

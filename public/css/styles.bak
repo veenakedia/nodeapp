@@ -1,0 +1,52 @@
+@import 'nib'
+
+global-reset()
+
+main-color = #333333
+background-color = #f4f4f4
+
+body
+    font-family 'Arial'
+    font-size 14px
+    background-color background-color
+    color #444
+
+h1
+    font-size:20px
+    line-height:1.8em
+
+header
+    padding 20px 10px
+    color #fff
+    font-size 25px
+    background-color main-color
+
+.container
+    width 80%
+    margin:auto
+
+.main-content
+    float left
+    margin:auto
+    width 70%
+
+   p
+     line-height 1.8em
+
+.sidebar
+    float right
+    margin:auto
+    width 27%
+
+    .block
+	border radius 5px
+	background-color background-color
+	overflow hidden
+
+        h1
+          font-size:20px
+          line-height:1.8em
+
+
+p
+    line-height 1.8em
