@@ -6,10 +6,15 @@
   "scripts": {
     "test": "(\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Capp.js"
   },
-  "dependencies":{
-	"jade": "*",
-	"express": "*",
-	"nib":"*"
+  "dependencies": {
+    "body-parser": "*",
+    "connect": "*",
+    "express": "*",
+    "jade": "*",
+    "mongodb": "1",
+    "mongoose": "^4.10.2",
+    "monk": "*",
+    "nib": "*"
   },
   "repository": {
     "type": "git",

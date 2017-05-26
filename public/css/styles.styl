@@ -2,6 +2,8 @@
 
 global-reset()
 
+reset-table-cell()
+
 main-color = #333333
 background-color = #f4f4f4
 
@@ -69,3 +71,19 @@ footer
       padding-top 5px
       margin-top 20px
       text-align center
+
+table#userlist
+  width 80%
+
+table#userlist tr th
+  border-top 1px dotted #ccc
+  font-weight bold
+  line-height 1.8
+
+table#userlist tr.odd
+  background-color: #666
+  line-height 1.8
+
+table#userlist tr.even
+  background-color: #888
+  line-height 1.8
