@@ -13,6 +13,8 @@ body
     background-color background-color
     color #444
 
+a
+	color #666666
 h1
     font-size 20px
     line-height 1.8em
@@ -27,6 +29,8 @@ header
     width 80%
     margin:auto
 
+	
+	
 .main-content
     float left
     width 70%
@@ -37,12 +41,12 @@ header
 .sidebar
     float right
     width 27%
-    padding 10px 10px 10px 10px
+    padding 40px 10px 10px 10px
     border 1px solid #ccc
 
     .block
         border radius 5px
-	padding 0 10px 10px 10px
+		padding 0 10px 10px 10px
         background-color background-color
         overflow hidden
 
@@ -53,8 +57,6 @@ header
 	  border radius 2px 2px 0px 0px
 	  margin-bottom 10px
 
-p
-    line-height 1.8
 
 .readmore
     float left
@@ -72,18 +74,42 @@ footer
       margin-top 20px
       text-align center
 
-table#userlist
-  width 80%
+table.userlist
+  width 100%
 
-table#userlist tr th
-  border-top 1px dotted #ccc
+table.userlist tr th
   font-weight bold
-  line-height 1.8
+  font-size 10
+  padding-left 2px
+  width 100px  bold
+  border-top 1px dotted #ccc
+  text-align center
 
-table#userlist tr.odd
-  background-color: #666
-  line-height 1.8
-
-table#userlist tr.even
+table.userlist tr.odd
   background-color: #888
-  line-height 1.8
+  line-height 1.5
+  border-bottom 1px dotted #ccc
+
+table.userlist tr.even
+  line-height 1.5
+
+
+tr td
+  text-align center
+  
+  
+div.techdiv
+	padding-bottom 20px
+
+ul.techlist
+	margin-bottom 20px
+	display block
+	overflow auto
+	list-style-type square
+	
+ul.techlist li
+	padding-left 16px
+	line-height 2em
+	border-bottom #ccc 1px dotted
+	float left
+	width 200px

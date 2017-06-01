@@ -1,31 +1,31 @@
 //module dependencies
 var express = require('express');
-var stylus = require('stylus');
-var nib = require('nib');
-var monk = require('monk');
-var mongodb = require('mongodb');
-//var routes = require('./routes');
-var index = require('./routes/index');
-var user = require('./routes/user');
-var http = require('http');
 var path = require('path');
-var db = monk('localhost:27017/nodeapp');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override')
 var cookieSession = require('cookie-session')
 var session = require('express-session')
-var mongoose = require('mongoose');
-var MongoClient = require('mongodb').MongoClient;
+var stylus = require('stylus');
+var nib = require('nib');
+var http = require('http');
+var path = require('path');
+
+//routes
+var routes = require('./routes/index');
+var users = require('./routes/users');
+
+
+var mongodb = require('mongodb');
+var monk = require('monk');
+var db = monk('localhost:27017/nodeapp');
+
 
 //set port
 var portnumber = 3000;
 
-var dbconnect;
-var connection = MongoClient.connect('mongodb://localhost:27017/nodeapp', function(err, db){
-	dbconnect = db;
-});
-//var schema = mongoose.Schema({last_name:'string',first_name:'string', username:'string',email:'string'});
-//var User = mongoose.model('User', schema);
 
 //Initialize express
 var app = express();
@@ -43,17 +43,31 @@ app.set('views',__dirname + '/views');
 app.set('view engine','jade');
 console.log('Jade has been initialized');
 
-//stylus middleware
-//app.use(express.logger('dev'));
+// uncomment after placing your favicon in /public
+//app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(logger('dev'));
 app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+//this should be over routes
+// Make our db accessible to our router
+app.use(function(req,res,next){
+    req.db = db;
+    next();
+});
+
+app.use('/', routes);
+app.use('/users', users);
+
+
 app.use(methodOverride('X-HTTP-Method-Override'))
 app.use(cookieSession({
 	name:'session',
 	keys:['mykey'],
 	maxAge: 24 * 60 * 60 * 1000 }));
-//app.use(session());
-//app.use(app.router);
 app.use(stylus.middleware(
  {
 	src:__dirname + '/public',
@@ -61,7 +75,7 @@ app.use(stylus.middleware(
  }
 ));
 	
-app.use(express.static(__dirname + '/public'));
+	
 
 //render index
 app.get('/', function(req,res){
@@ -70,22 +84,26 @@ app.get('/', function(req,res){
 	}
 );
 
-app.get('/userlist', function(req,res,next){
-	dbconnect.collection('usercollection').find().toArray(function(err, userlist) {s
-    res.render(
-		'userlist', {
-      title: 'User List',
-      userlist: userlist
-    })
-  })
-});
-//app.get('/userlist', user);
+/// error handlers
 
-// Make our db accessible to our router
-
-
-//app.post('/adduser',route.adduser(db));
+// development error handler
+// will print stacktrace
+if (app.get('env') === 'development') {
+    app.use(function(err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
+    });
+}
 
 
 app.listen(portnumber);
 console.log('server is now running on port:' + portnumber);
+
+module.exports = app;
+
+
+
+

@@ -3,6 +3,8 @@ html
 	head
 		title #{title} - Node.js Demo
 		link(rel='stylesheet',href='/css/styles.css')
+		script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+		script(src='/javascript/global.js')
 	body
 		header
 			.container
@@ -12,6 +14,14 @@ html
 					block content
 				.sidebar
 					block sidebar
-	footer
-		.container
-			p Copyright &copy: 2017
+						.block
+							h1 Registration Form
+								form.addUser(name = "addUser" method="post" action="/users/adduser")
+									input(type="text" name="first_name" placeholder="First Name")
+									input(type="text" name="last_name" placeholder="Last Name")
+									input(type="text" name="username" placeholder="User Name")
+									input(type="text" name="email" placeholder="Email")
+									button(type="submit") Submit
+		footer
+			.container
+				p Copyright &copy: 2017
